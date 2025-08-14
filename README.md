@@ -1,1 +1,2 @@
-# affiliate-ally
+# Affiliate Ally
+Fast affiliate hub.
