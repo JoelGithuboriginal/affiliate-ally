@@ -35,13 +35,12 @@ const sectors = {
       a.rel = "noopener noreferrer";
       a.textContent = name;
   
-      // Track clicks (optional: send to analytics)
+      // Track clicks (optional future integration)
       a.addEventListener("click", () => {
         console.log(`Clicked: ${name}`);
-        // Future: send to Notion, Airtable, GA
       });
   
-      // QR toggle button
+      // QR toggle
       const qrToggle = document.createElement("button");
       qrToggle.textContent = "📱 Show QR";
       qrToggle.className = "qr-toggle";
