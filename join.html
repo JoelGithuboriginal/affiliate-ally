@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Join Affiliate Ally 🚀</title>
+  <link rel="stylesheet" href="public/style.css">
+  <link rel="icon" href="public/favicon.ico">
+
+  <meta name="description" content="Join Affiliate Ally to unlock exclusive bonuses and community support.">
+  <meta property="og:title" content="Join Affiliate Ally 🚀">
+  <meta property="og:description" content="Unlock extra bonuses + community support.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://affiliate-ally.netlify.app/join.html">
+  <meta property="og:image" content="https://affiliate-ally.netlify.app/public/preview.png">
+</head>
+<body>
+  <header class="hero">
+    <h1>Join Affiliate Ally 🚀</h1>
+    <p>Unlock exclusive bonuses + join the money-making community.</p>
+  </header>
+
+  <main class="container">
+
+    <!-- Email capture (Formspree) -->
+    <section class="cta-box">
+      <h3>📧 Get Exclusive Offers</h3>
+      <p>Drop your email to unlock hidden bonuses not listed publicly.</p>
+
+      <form action="https://formspree.io/f/xldlvbay" method="POST" class="email-form">
+        <!-- Required email field -->
+        <input type="email" name="email" placeholder="you@example.com" required
+               style="padding:10px;border-radius:8px;border:1px solid #ccc;width:100%;max-width:360px;">
+
+        <!-- Optional: your name -->
+        <input type="text" name="name" placeholder="Your name (optional)"
+               style="margin-top:8px;padding:10px;border-radius:8px;border:1px solid #ccc;width:100%;max-width:360px;">
+
+        <!-- Metadata to help you in Formspree inbox -->
+        <input type="hidden" name="source" value="affiliate-ally-join-page">
+        <input type="hidden" name="_subject" value="New Affiliate Ally subscriber">
+
+        <!-- Simple honeypot (spam trap) -->
+        <input type="text" name="_gotcha" style="display:none">
+
+        <button type="submit" class="affiliate-button" style="margin-top:10px;">Join Now</button>
+      </form>
+
+      <p class="note" style="font-size:0.9rem;color:#666;margin-top:8px;">
+        We never spam. You can unsubscribe anytime.
+      </p>
+    </section>
+
+    <!-- WhatsApp CTA -->
+    <section class="cta-box">
+      <h3>💬 Fast-Track via WhatsApp</h3>
+      <p>Want 1:1 help and instant updates? Join our WhatsApp broadcast list.</p>
+      <a href="https://wa.me/447352074780?text=Hi%20Joel%2C%20I%20want%20to%20join%20Affiliate%20Ally"
+         target="_blank" rel="noopener noreferrer" class="affiliate-button">
+        📲 Join via WhatsApp
+      </a>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 Affiliate Ally. Built by Joel Pinnock.</p>
+    <a href="index.html" class="back-link">⬅ Back to Home</a>
+  </footer>
+</body>
+</html>
