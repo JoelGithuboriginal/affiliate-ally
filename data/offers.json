@@ -1,0 +1,27 @@
+{
+  "Online Banks": [
+    { "name": "Monzo", "link": "https://join.monzo.com/c/2rbjhx60" }
+  ],
+  "Free Money Apps": [
+    { "name": "FreeCash – Fast Tasks", "link": "https://your-freecash-ref" },
+    { "name": "GoHenry – £10 for them / £30 for you", "link": "https://your-gohenry-ref" }
+  ],
+  "Shopping Bonuses": [
+    {
+      "name": "TopCashback £10 Offer",
+      "link": "https://topcashback.co.uk/ref/YOURCODE",
+      "customQr": "public/qr/topcashbackuk.png"
+    },
+    { "name": "Quidco £15 Signup", "link": "https://quidco.com/ref/YOURCODE" }
+  ],
+  "Investment & Credit": [
+    {
+      "name": "Zable – £10 Sign-Up Bonus",
+      "link": "https://zable.co.uk/join?c=joel-22bea",
+      "customQr": "public/qr/zable-qr.png"
+    }
+  ],
+  "Extras": [
+    { "name": "Custard – £1 for them / £5 for you", "link": "https://your-custard-ref" }
+  ]
+}
