@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Affiliate Ally</title>
+
   <link rel="stylesheet" href="public/style.css">
   <link rel="icon" href="public/favicon.ico">
 
@@ -15,11 +16,67 @@
   <meta property="og:url" content="https://affiliate-ally.netlify.app">
   <meta property="og:image" content="https://affiliate-ally.netlify.app/public/preview.png">
 </head>
-<body>
+<body class="with-sidenav">
+  <!-- Collapsible Side Navigation -->
+  <aside id="sidenav" class="sidenav" aria-label="Primary">
+    <div class="sidenav-inner">
+      <a class="snav-item" href="/">
+        <span class="icon" aria-hidden="true">🏠</span>
+        <span class="label">Home</span>
+      </a>
+
+      <hr class="snav-sep" aria-hidden="true">
+
+      <a class="snav-item" href="#banking">
+        <span class="icon" aria-hidden="true">🏦</span>
+        <span class="label">Banking</span>
+      </a>
+
+      <a class="snav-item" href="#cards">
+        <span class="icon" aria-hidden="true">💳</span>
+        <span class="label">Cards</span>
+      </a>
+
+      <a class="snav-item" href="#investing">
+        <span class="icon" aria-hidden="true">📈</span>
+        <span class="label">Investing</span>
+      </a>
+
+      <a class="snav-item" href="#cashback">
+        <span class="icon" aria-hidden="true">💸</span>
+        <span class="label">Cashback</span>
+      </a>
+
+      <a class="snav-item" href="#kids">
+        <span class="icon" aria-hidden="true">👨‍👩‍👧‍👦</span>
+        <span class="label">Kids/Family</span>
+      </a>
+
+      <a class="snav-item" href="join.html">
+        <span class="icon" aria-hidden="true">🤝</span>
+        <span class="label">Join</span>
+      </a>
+    </div>
+
+    <!-- Round edge toggle button -->
+    <button id="sidenavToggle" class="sidenav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span class="chev">›</span>
+    </button>
+  </aside>
+
   <header class="hero">
     <h1>Affiliate Ally 💸</h1>
     <p>Your gateway to fast cash with zero investment.</p>
   </header>
+
+  <!-- Top navigation (kept) -->
+  <nav class="topnav container">
+    <a href="#banking">Banking</a>
+    <a href="#investing">Investing</a>
+    <a href="#cashback">Cashback</a>
+    <a href="#kids">Kids/Family</a>
+    <a href="join.html">Join</a>
+  </nav>
 
   <main class="container">
     <!-- CTA block -->
@@ -31,13 +88,73 @@
       </a>
     </section>
 
+    <!-- Filters -->
+    <div id="filters" class="container" style="display:flex; gap:10px; align-items:center; flex-wrap:wrap; padding-top:0;">
+      <input id="q" placeholder="Search brand…" style="padding:10px;border:1px solid #ddd;border-radius:8px;max-width:240px;">
+      <select id="type" style="padding:10px;border:1px solid #ddd;border-radius:8px;">
+        <option value="">All types</option>
+        <option>Banking</option>
+        <option>Investing</option>
+        <option>Cashback</option>
+        <option>Kids/Family</option>
+        <option>Cards</option>
+        <option>Extras</option>
+      </select>
+      <span id="updated" class="small grey" style="margin-left:auto;"></span>
+    </div>
+
+    <!-- Anchor stubs for nav -->
+    <div id="banking"></div>
+    <div id="cards"></div>
+    <div id="investing"></div>
+    <div id="cashback"></div>
+    <div id="kids"></div>
+
     <!-- Affiliate links injected by app.js -->
     <div id="referral-sectors"></div>
+
+    <!-- Trust / how we pick -->
+    <section class="cta-box" style="text-align:left">
+      <h3>How we pick offers</h3>
+      <ul>
+        <li>Highest real-world bonus (for you and your friend)</li>
+        <li>Clear, achievable requirements</li>
+        <li>UK availability & recent verification</li>
+      </ul>
+      <p class="small grey">Some links are affiliate. Bonuses change — always check T&Cs. For investing, capital is at risk.</p>
+    </section>
   </main>
 
   <footer class="footer">
     <p>© 2025 Affiliate Ally. Built by Joel Pinnock.</p>
   </footer>
+
+  <!-- Sidenav logic -->
+  <script>
+    (function(){
+      const body = document.body;
+      const snav = document.getElementById('sidenav');
+      const btn  = document.getElementById('sidenavToggle');
+
+      // restore saved state
+      const saved = localStorage.getItem('snav_open') === '1';
+      if (saved){ snav.classList.add('expanded'); body.classList.add('snav-open'); btn.setAttribute('aria-expanded','true'); }
+
+      function toggle(){
+        const open = snav.classList.toggle('expanded');
+        body.classList.toggle('snav-open', open);
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        localStorage.setItem('snav_open', open ? '1' : '0');
+      }
+      btn.addEventListener('click', toggle);
+    })();
+
+    // show a simple "last updated" timestamp
+    (function(){
+      var el = document.getElementById('updated');
+      if (el) el.textContent = "Last updated: " + new Date().toLocaleDateString();
+    })();
+  </script>
 
   <script src="src/app.js"></script>
 </body>
